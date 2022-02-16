@@ -27,4 +27,9 @@ class HostsController < ApplicationController
         host.to_json(include: :rooms)
       end
 
+    get '/hosts/:id' do
+     host = Host.find(params[:id])
+     host.to_json(include: :rooms)
+    end
+
 end

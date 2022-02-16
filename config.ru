@@ -16,3 +16,4 @@ run ApplicationController
 use GuestsController
 use HostsController
 use RoomsController
+use AuthController

@@ -9,5 +9,26 @@ class RoomsController < ApplicationController
         Room.find(params[:id]).to_json
     end
 
+    delete '/rooms/:id' do
+      room = Room.find(params[:id])
+      room.destroy
+      room.to_json
+    end
+    # Host.find_by(email: params[:email]).id
+    post '/rooms' do
+      room = Room.create(
+        host_id: params[:host_id],
+        guest_id: nil,
+        address: params[:address],
+        living_type: params[:living_type],
+        image: params[:image],
+        title: params[:title],
+        description: params[:description],
+        price: params[:price],
+        rating: 0,
+        comment: ''
+      )
+    end
+
     
 end
