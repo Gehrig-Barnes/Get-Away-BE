@@ -8,4 +8,11 @@ class RoomsController < ApplicationController
       get '/rooms/:id' do
         Room.find(params[:id]).to_json
     end
+
+    post '/rooms' do
+      rooms = Room.create(
+        host_id: params[:host_id]
+        
+      )
+    end
 end
