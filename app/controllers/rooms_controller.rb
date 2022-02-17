@@ -26,8 +26,18 @@ class RoomsController < ApplicationController
         description: params[:description],
         price: params[:price],
         rating: 0,
+        total_rating: 0,
         comment: ''
       )
+    end
+
+    patch '/rooms/:id' do
+      room = Room.find(params[:id])
+      room.update(
+        rating: params[:rating],
+        total_rating: params[:total_rating]
+      )
+      room.to_json
     end
 
     
