@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2022_02_13_220146) do
     t.string "description"
     t.integer "price"
     t.integer "rating"
+    t.integer "total_rating"
     t.string "comment"
   end
 

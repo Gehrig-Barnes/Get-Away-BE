@@ -10,6 +10,7 @@ class CreateRooms < ActiveRecord::Migration[6.1]
       t.string :description
       t.integer :price
       t.integer :rating
+      t.integer :total_rating
       t.string :comment
     end
   end
